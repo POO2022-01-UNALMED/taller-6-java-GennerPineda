@@ -1,4 +1,4 @@
-package taller6POO;
+package vehiculos;
 
 public class Camioneta extends Vehiculo{
 	boolean volco;
@@ -10,6 +10,15 @@ public class Camioneta extends Vehiculo{
 	}
 	public boolean isVolco() {
 		return this.volco;
+	}
+	public void setVolvo(boolean volco) {
+		this.volco = volco;
+	}
+	public static int getNumCamionetas() {
+		return numCamioneta;
+	}
+	public static void setNumCamionetas(int c) {
+		numCamioneta = c;
 	}
 	
 

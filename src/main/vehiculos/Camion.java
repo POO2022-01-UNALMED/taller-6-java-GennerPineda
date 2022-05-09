@@ -1,4 +1,4 @@
-package taller6POO;
+package vehiculos;
 
 public class Camion extends Vehiculo{
 	int ejes;
@@ -12,6 +12,12 @@ public class Camion extends Vehiculo{
 	}
 	public int getEjes() {
 		return this.ejes;
+	}
+	public void setNumCamiones(int c) {
+		numCamion = c;
+	}
+	public int getNumCamiones() {
+		return numCamion;
 	}
 
 }

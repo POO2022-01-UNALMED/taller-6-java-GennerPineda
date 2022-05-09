@@ -1,4 +1,4 @@
-package taller6POO;
+package vehiculos;
 
 public class Automovil extends Vehiculo{
 	int puestos;
@@ -14,6 +14,12 @@ public class Automovil extends Vehiculo{
 	}
 	public int getPuestos() {
 		return this.puestos;
+	}
+	public static void setNumAutomoviles(int a) {
+		numAutomoviles = a;
+	}
+	public static int getNumAutomoviles() {
+		return numAutomoviles;
 	}
 
 }

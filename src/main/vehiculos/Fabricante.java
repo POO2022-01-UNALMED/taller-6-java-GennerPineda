@@ -1,14 +1,15 @@
-package taller6POO;
+package vehiculos;
 import java.util.*;
 
 public class Fabricante {
 	String nombre;
 	Pais pais;
-	static ArrayList<Pais> listaPaises = new ArrayList<Pais>();
+	static ArrayList<Fabricante> listaFabricantes = new ArrayList<Fabricante>();
+	
 	public Fabricante(String nombre, Pais pais) {
 		this.nombre = nombre;
 		this.pais = pais;
-		listaPaises.add(this.pais);
+		listaFabricantes.add(this);
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -22,12 +23,12 @@ public class Fabricante {
 	public Pais getPais() {
 		return this.pais;
 	}
-	public Pais paisMasVendedor() {
+	public static Fabricante fabricaMayorVentas() {
 		ArrayList<Integer> count = new ArrayList<Integer>(); 
-		for (int i = 0; i < listaPaises.size(); i++) {
+		for (int i = 0; i < listaFabricantes.size(); i++) {
 			int k = 0;
-			for (int j = 0; j< listaPaises.size(); j++) {
-				if (listaPaises.get(i) == listaPaises.get(j)) {
+			for (int j = 0; j< listaFabricantes.size(); j++) {
+				if (listaFabricantes.get(i) == listaFabricantes.get(j)) {
 					k++;
 				}
 			}
@@ -39,7 +40,8 @@ public class Fabricante {
 				indiceMayor = r;
 			}
 		}
-		return listaPaises.get(indiceMayor);
+		return listaFabricantes.get(indiceMayor);
+		
 	}
 	
 }

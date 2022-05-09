@@ -1,5 +1,4 @@
-package taller6POO;
-import java.util.*;
+package vehiculos;
 
 public class Vehiculo {
 	String placa;
@@ -10,7 +9,6 @@ public class Vehiculo {
 	int peso;
 	String traccion;
 	Fabricante fabricante;
-	static ArrayList<Fabricante> listaFabricantes = new ArrayList<Fabricante>();
 
 	static int cantidadVehiculos;
 	
@@ -24,8 +22,15 @@ public class Vehiculo {
 		this.traccion = traccion;
 		this.fabricante = fabricante;
 		cantidadVehiculos ++;
-		listaFabricantes.add(this.fabricante);
 	
+		
+	}
+	public static void setCantidadVehiculos(int c) {
+		cantidadVehiculos = c;
+		
+	}
+	public static int getCantidadVehiculos() {
+		return cantidadVehiculos;
 		
 	}
 	public void setPlaca(String placa) {
@@ -70,30 +75,16 @@ public class Vehiculo {
 	public Fabricante getFabricante() {
 		return this.fabricante;
 	}
+	public int getPeso() {
+		return this.peso;
+	}
+	public void setPeso(int p) {
+		this.peso = p;
+	}
 	
-	public String vehiculosPorTipo() {
+	public static String vehiculosPorTipo() {
 		return "Automoviles: " + Automovil.numAutomoviles+"\nCamionetas: "+ Camioneta.numCamioneta+ "\nCamiones: "+ Camion.numCamion;
 	}
 	
-	public Fabricante fabricaMayorVentas() {
-		ArrayList<Integer> count = new ArrayList<Integer>(); 
-		for (int i = 0; i < listaFabricantes.size(); i++) {
-			int k = 0;
-			for (int j = 0; j< listaFabricantes.size(); j++) {
-				if (listaFabricantes.get(i) == listaFabricantes.get(j)) {
-					k++;
-				}
-			}
-			count.add(k);
-		}
-		int indiceMayor = 0;
-		for (int r = 1; r < count.size(); r++) {
-			if (count.get(r) > count.get(indiceMayor)) {
-				indiceMayor = r;
-			}
-		}
-		return listaFabricantes.get(indiceMayor);
-		
-	}
 
 }
